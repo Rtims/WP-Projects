@@ -1,0 +1,723 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/utilities/general/clearfix";
+@import "compass/reset";
+@import "compass/css3";
+@import "breakpoint";
+
+/* Import sass file for pages
+------------------------------------*/
+@import "_aside";
+@import "_footer";
+@import "_innerpage";
+
+$width1: max-width 768px;
+$width2: max-width 640px;
+$width3: max-width 480px;
+$width4: max-width 320px;
+
+/* Variables Declared
+------------------------*/
+
+$white:			#fff;
+$grey:			#f8f8f8;
+$orange:		#e85442;
+$text-color:	#222;
+$black:			#000;
+
+$hover-color:	$orange;
+$title-color: 	$black;
+
+/* Font Use
+------------------------*/
+
+$font-lato: 		'Lato', sans-serif;
+$font-libre:		'Libre Franklin', sans-serif;
+
+/* Global Buttons
+------------------------*/
+
+.full-width {
+	float: left;
+	width: 100%;
+}
+
+.container {
+	width: 90%;
+	max-width: 1360px;
+}
+
+head,
+head:hover {
+	display: none !important;
+}
+
+.entry-meta span {
+	margin: 0 10px;
+}
+
+.entry-content p,
+.entry-content a {
+	word-break: break-word;
+}
+
+/* Mixins
+------------------------*/
+
+@mixin btn-1 {
+	color: $white;
+	font-size: 12px;
+	text-align: left;
+	background: $orange;
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: $font-libre;
+	padding: 15px 25px 15px 40px;
+	@include transition(.5s);
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+
+	i.far {
+		font-size: 18px;
+		margin: 0 0 0 20px;
+	}
+	
+	&:hover, &:active {
+		color: $black;
+		background: $white;
+		box-shadow: 0 0 0 1px $black;
+	}
+}
+
+.btn-1 {
+	@include btn-1;
+}
+
+@mixin btn-2 {
+	width: 150px;
+	color: $white;
+	margin: 20px 0;
+	display: block;
+	font-size: 11px;
+	text-align: left;
+	background: $black;
+	text-transform: uppercase;
+	font-family: $font-libre;
+	padding: 5px 20px ;
+	@include transition(.5s);
+	@include border-radius(50px);
+	@include box-sizing(border-box);
+
+	i.far {
+		font-size: 18px;
+		margin: 0 0 0 20px;
+	}
+	
+	&:hover, &:active {
+		color: $white;
+		background: $hover-color;
+	}
+}
+
+.btn-2 {
+	@include btn-2;
+}
+
+@mixin btn-ftr {
+	color: $white;
+	font-size: 12px;
+	text-align: left;
+	background: $orange;
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: $font-libre;
+	padding: 5px 20px;
+	margin: 20px 0;
+	@include transition(.5s);
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+
+	i.far {
+		font-size: 18px;
+		margin: 0 0 0 20px;
+	}
+	
+	&:hover, &:active {
+		color: $black;
+		background: $white;
+	}
+}
+
+.btn-ftr {
+	@include btn-ftr;
+}
+
+
+.entry-header {
+	margin: 0 0 20px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.site-content {
+	
+	h2, h3 {
+		margin: 0 0 20px;
+	}
+}
+
+.display-block {
+	display: block;
+}
+
+
+/* Global Settings
+------------------------*/
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: $hover-color;
+	text-decoration: none;
+}
+
+a:visited {
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+aside a {
+
+	&:hover, &:active {
+		text-decoration: underline;
+	}
+}
+
+
+h1, h2, h3, h4, h5 {
+	display: block;
+	font-weight: bold;
+	margin: 0 auto 30px;
+	color: $title-color;
+	line-height: normal;
+	font-family: $font-lato;
+
+	&:after {
+		content: "";
+		width: 100px;
+		height: 2px;
+		display: block;
+		margin: 20px 0 0;
+		background: $hover-color;
+	}
+}
+
+h1 {
+	font-size: 50px;
+
+	@include breakpoint($width1) {
+		font-size: 35px;
+	}
+}
+
+h2 {
+	font-size: 30px;
+
+	@include breakpoint($width1) {
+		font-size: 25px;
+	}
+}
+
+h3 {
+	font-size: 25px;
+
+	@include breakpoint($width1) {
+		font-size: 20px;
+	}
+}
+
+h1.centered:after,
+h2.centered:after,
+h3.centered:after,
+h4.centered:after,
+h5.centered:after {
+	margin: 20px auto;
+}
+
+span.italic {
+	font-size: 20px;
+	margin: 0 0 20px;
+}
+
+b {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.bg-white {
+	background: $white;
+}
+
+.bg-grey {
+	background: $grey;
+}
+
+.bg-orange {
+	background: $orange;
+}
+
+.container-padding {
+	padding: 80px 0;
+	@include box-sizing(border-box);
+}
+
+.entry-content p {
+	margin: 0 0 20px;
+}
+
+/* Images */
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.aligncenter {
+	margin: 5px auto;
+}
+
+form {
+	input[type=text],
+	input[type=email],
+	input[type=tel],
+	textarea {
+		width: 100%;
+		padding: 10px;
+		@include box-sizing(border-box);
+		@include border-radius(2px);
+	}
+
+}
+
+ul.listed {
+	margin: 0 0 20px;
+	list-style: disc !important;
+
+	li {
+		margin-left: 20px;
+	}
+}
+
+/* Clearfix declarations */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* Start of body
+------------------------*/
+
+body {
+	color: $text-color;
+	font-size: 16px;
+	line-height: 30px;
+	font-family: $font-libre;
+}
+
+.home #masthead {
+	z-index: 9999;
+	background: none;
+	position: absolute;
+	border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+#masthead .container {
+	padding: 20px 0;
+}
+
+.navbar {
+	display: block;
+}
+
+.navbar-toggler {
+	outline: none !important;
+	color: rgba(255,255,255,.8) !important;
+    border-color: rgba(255,255,255,.5) !important;
+}
+
+.main-navigation {
+	width: 100%;
+	float: right;
+	text-align: right;
+
+	@include breakpoint($width1) {
+		background: rgba(255, 255, 255, .9);
+	}
+}
+
+.nav-menu {
+	width: 100%
+}
+
+.main-navigation ul {
+	width: 100%;
+	display: block;
+	text-align: right;
+}
+
+.main-navigation ul li {
+	margin: 0 0 0 20px;
+	display: inline-block;
+
+	&:first-child {
+		margin: 0;
+	}
+
+	@include breakpoint($width1) {
+		display: block;
+		margin: 0;
+	}
+}
+
+.main-navigation ul li a {
+	color: $black;
+
+	&:hover, &:active {
+		text-decoration: underline;
+	}
+
+	@include breakpoint($width1) {
+		margin: 0;
+		padding: 10px;
+		display: block;
+		color: $text-color;
+		border-top: 1px solid #444;
+	}
+}
+
+.home .main-navigation ul li a {
+	color: $white;
+}
+
+.overlay-mobile-bg {
+	display: none;
+}
+
+.main-slider {
+	width: 100%;
+	height: 750px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	@include breakpoint($width1) {
+		height: auto;
+	}
+
+	@include breakpoint($width2) {
+		padding: 0 0 50px;
+		background: url(../images/mobile-bg.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+		.overlay-mobile-bg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: rgba(0, 0, 0, .4);
+			z-index: 1;
+		}
+	}
+}
+
+#metaslider-id-11,
+#metaslider-id-8, {
+
+	@include breakpoint($width2) {
+		display: none;
+	}
+}
+
+.main-slider .overlay-bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, .5);
+	z-index: 3;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3542fc+0,e73827+100 */
+	background: -moz-linear-gradient(top,  rgba(68, 68, 68, .5) 0%, rgba(68, 68, 68, .3) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(68, 68, 68, .5) 0%, rgba(68, 68, 68, .3) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(68, 68, 68, .5) 0%, rgba(68, 68, 68, .3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+
+}
+
+.slider-info {
+	left: 0;
+	right: 0;
+	text-align: center;
+	margin: 15% auto 0;
+	position: absolute;
+	z-index: 2;
+
+	@include breakpoint($width2) {
+		margin: 25% auto 0;
+		position: relative;
+	}
+
+	@include breakpoint($width3) {
+		margin: 30% auto 0;
+	}
+
+	@include breakpoint($width4) {
+		margin: 40% auto 0;
+	}
+}
+
+.slider-info h1 {
+	color: $white;
+	margin: 0 0 20px;
+	line-height: normal;
+}
+
+.slider-info span.slider-tagline {
+	color: $grey;
+	display: block;
+	font-size: 20px;
+	margin: 0 0 50px;
+	line-height: 35px;
+
+	@include breakpoint($width1) {
+		line-height: 25px;
+	}
+}
+
+.hm-lt-post li {
+	padding: 30px;
+}
+
+.hm-lt-post li p {
+	font-size: 16px;
+}
+
+.hm-lt-post .hm-pthumb {
+	width: 40%;
+	float: left;
+	position: relative;
+
+	.dis-cat {
+		top: -15px;
+		left: 20px;
+		padding: 3px 15px;
+		position: absolute;
+		background: $orange;
+		@include border-radius(50px);
+
+		a {
+			color: $white;
+		}
+
+		&:hover, &:focus {
+			background: $black;
+		}
+	}
+
+	@include breakpoint($width2) {
+		width: 100%;
+		margin: 0 0 20px;
+		text-align: center;
+	}
+}
+
+.trusted-brands {
+
+	.btn-2 {
+		float: none;
+    	margin: 20px auto;
+	}
+
+	.hm-pthumb {
+		border: 0 !important;
+	}
+}
+
+.hm-lt-post .hm-pinfo {
+	width: 60%;
+	float: left;
+	padding: 0 0 0 4%;
+
+	@include breakpoint($width2) {
+		padding: 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+article.post {
+	margin: 0 0 60px;
+}
+
+article ul {
+	list-style: disc;
+	margin: 0 0 20px;
+    list-style-position: inside;
+}
+
+article ol {
+	padding: 0 0 0 20px;
+	list-style: decimal;
+
+	li {
+		margin: 0 0 30px;
+	}
+}
+
+.sec-title {
+	width: 70%;
+	display: block;
+	margin: 0 auto 80px;
+}
+
+.sec-title h2:after {
+	text-align: center;
+	margin: 20px auto 0;
+}
+
+.compare-price {
+	display: block;
+	margin: 20px 0;
+
+	b {
+		margin: 0 0 20px;
+		font-weight: bold;
+	}
+}
+
+.washer-compare,
+.trusted-brands {
+
+	.hm-pthumb {
+		margin: 0 0 20px;
+		border: 1px solid $grey;
+	}
+
+	@include breakpoint($width1) {
+		margin: 0 0 80px;
+	}
+}
+
+
+.single .post-navigation,
+.single .comment-respond {
+	display: none;
+}
+
+.btn-row {
+	margin-top: 50px;
+	align-items: center;
+  	justify-content: center;
+}
+
+.post-tble-content {
+	width: 100%;
+	background: $grey;
+	border: 1px solid #efefef;
+}
+
+.post-tble-content thead {
+	background: $hover-color;
+	border: 1px solid #efefef;
+}
+
+.post-tble-content thead th {
+	color: $white;
+	padding: 15px;
+}
+
+.post-tble-content td {
+	padding: 15px;
+	border: 1px solid #efefef;
+}
+
+article .post-ttle {
+	display: block;
+	margin: 60px 0;
+}
+
+.post-content-box {
+	width: 100%; 
+	padding: 30px;
+	margin: 50px 0 !important;
+	background: $grey;  
+	border: 1px solid #efefef; 
+	@include border-radius(4px);
+
+	&:after {
+		margin: 20px auto;
+	}
+}
+
+.nocomments {
+	display: none;
+}
+
+aside ul li {
+	display: block;
+	padding: 0 0 10px;
+	margin: 0 0 20px;
+	border-bottom: 1px solid #efefef;
+}
+
+.washer-compare,
+.trusted-brands {
+	padding: 1%;
+	background: #fff;
+}

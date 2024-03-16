@@ -1,0 +1,23 @@
+/* Variables Declared
+------------------------*/
+
+$white:			#fff;
+$grey:			#f0f0f0;
+$orange:		#e85442;
+$text-color:	#373737;
+$black:			#222222;
+
+$hover-color:	$orange;
+$title-color: 	$black;
+
+/* Start of code
+------------------------*/
+
+.inner-page-title {
+	background: $orange;
+
+	h1 {
+		margin: 0;
+		color: $white;
+	}
+}

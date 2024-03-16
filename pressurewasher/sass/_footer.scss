@@ -1,0 +1,68 @@
+/* Variables Declared
+------------------------*/
+
+$white:			#fff;
+$grey:			#f0f0f0;
+$orange:		#e85442;
+$text-color:	#373737;
+$black:			#222222;
+
+$hover-color:	$orange;
+$title-color: 	$black;
+
+/* Start of code
+------------------------*/
+
+.upper-footer {
+	color: #9b9b9b;
+	background: #192126;
+}
+
+.upper-footer h3 {
+	color: $white;
+}
+
+footer.site-footer {
+	color: #9b9b9b;
+	padding: 40px 0;
+	text-align: center;
+	background: #2d2d2d;
+}
+
+.footer-menu ul {
+	margin: 0 0 20px;
+}
+
+.footer-menu ul li {
+	display: inline-block;
+
+	&:first-child a {
+		border: 0;
+	}
+}
+
+.footer-menu ul li a {
+	color: #9b9b9b;
+	padding: 0 10px 0;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-left: 1px solid #555;
+
+	&:hover, &:focus {
+		color: $hover-color;
+	}
+}
+
+.ftr-text h3 {
+	color: $white;
+}
+
+.ftr-text p {
+	display: block;
+}
+
+.ftr-info {
+	margin: 30px 0 0;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	padding: 50px 0 0;
+}
