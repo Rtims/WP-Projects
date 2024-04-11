@@ -1,0 +1,858 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/utilities/general/clearfix";
+@import "font-awesome-sprockets";
+@import "compass/reset";
+@import "font-awesome";
+@import "compass/css3";
+@import "breakpoint";
+@import "susy";
+
+$susy: (
+  debug: (
+    image: show,
+    color: blue,
+    output: overlay,
+    toggle: top right,
+  ),
+);
+
+$width1: max-width 772px;
+$width2: max-width 645px;
+$width3: max-width 485px;
+$width4: max-width 325px;
+
+/* Variables Declared
+------------------------*/
+
+$white:			#fff;
+$red:			#ff3300;
+$text-color:	#424141;
+$black:			#222222;
+
+/* Font Use
+------------------------*/
+
+$font-roboto: 		'Roboto', sans-serif;
+$font-opensans:		'Open Sans Condensed', sans-serif;
+
+/* Global Buttons
+------------------------*/
+
+.full-width {
+	float: left;
+	width: 100%;
+}
+
+.limit-width {
+	@include container(1059px);
+
+	@include breakpoint(max-width 1400px) {
+		width: 95%;
+	}
+}
+
+head,
+head:hover {
+	display: none !important;
+}
+
+.entry-meta span {
+	margin: 0 10px;
+}
+
+.entry-content p,
+.entry-content a {
+	word-break: break-word;
+}
+
+/* Mixins
+------------------------*/
+
+@mixin btn-red {
+	height: 58px;
+	color: $white;
+	font-size: 16px;
+	background: $red;
+	font-weight: bold;
+	text-align: center;
+	padding: 17px 45px 0;
+	display: inline-block;
+	font-family: $font-roboto;
+	@include transition(1s);
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+
+	&:hover, &:active {
+		background: #ff6600;	
+	}
+}
+
+.btn-red {
+	@include btn-red;
+}
+
+@mixin btn-black {
+	height: 58px;
+	color: $white;
+	font-size: 16px;
+	padding: 17px 45px 0;
+	font-weight: bold;
+	background: $black;
+	text-align: center;
+	display: inline-block;
+	font-family: $font-roboto;
+	@include transition(1s);
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+
+	&:hover, &:active {
+		background: #6f6f6f;	
+	}
+}
+
+.btn-black {
+	@include btn-black;
+}
+
+@mixin btn-qoute {
+	width: 425px;
+	height: 60px;
+	color: $black;
+	font-size: 16px;
+	text-align: left;
+	font-weight: bold;
+	background: $white;
+	display: inline-block;	
+	padding: 17px 21px 0 45px;
+	font-family: $font-roboto;
+	@include transition(1s);
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+
+	span {
+		width: 33px;
+		height: 33px;
+		float: right;
+		margin: -5px 0 0;
+		background: url(../images/btn-qoute-arrow.png) 0 0 no-repeat;
+	}
+
+	&:hover, &:active {
+		color: $white;
+		background: $red;
+
+		span {
+			background-position: 0 -33px;
+		}
+	}
+
+	@include breakpoint($width3) {
+		width: auto;
+		height: auto;
+		text-align: center;
+		padding: 17px 15px;
+
+		span {
+			display: none;
+		}
+	}
+}
+
+.btn-qoute {
+	@include btn-qoute;
+}
+
+
+.entry-header {
+	margin: 0 0 20px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.site-content {
+	
+	h2, h3 {
+		margin: 0 0 20px;
+	}
+}
+
+.display-block {
+	display: block;
+}
+
+
+/* Layout Classes
+------------------------*/
+
+.span-12 {
+	@include span(12 of 12);
+}
+
+.span-11 {
+	@include span(11 of 12);
+}
+
+.span-11-last {
+	@include span(11 of 12 last);
+}
+
+.span-10 {
+	@include span(10 of 12);
+}
+
+.span-10-last {
+	@include span(10 of 12 last);
+}
+
+.span-9 {
+	@include span(9 of 12);
+}
+
+.span-9-last {
+	@include span(9 of 12 last);
+}
+
+.span-8 {
+	@include span(8 of 12);
+}
+
+.span-8-last {
+	@include span(8 of 12 last);
+}
+
+.span-7 {
+	@include span(7 of 12);
+}
+
+.span-7-last {
+	@include span(7 of 12 last);
+}
+
+.span-6 {
+	@include span(6 of 12);
+}
+
+.span-6-last {
+	@include span(6 of 12 last);
+}
+
+.span-5 {
+	@include span(5 of 12);
+}
+
+.span-5-last {
+	@include span(5 of 12 last);
+}
+
+.span-4 {
+	@include span(4 of 12);
+}
+
+.span-4-last {
+	@include span(4 of 12 last);
+}
+
+.span-3 {
+	@include span(3 of 12);
+}
+
+.span-3-last {
+	@include span(3 of 12 last);
+}
+
+.span-2 {
+	@include span(2 of 12);
+}
+
+.span-2-last {
+	@include span(2 of 12 last);
+}
+
+.span-1 {
+	@include span(1 of 12);
+}
+
+.span-1-last {
+	@include span(1 of 12 last);
+}
+
+/* Global Settings
+------------------------*/
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+aside a {
+
+	&:hover, &:active {
+		text-decoration: underline;
+	}
+}
+
+
+h1, h2, h3 {
+	font-family: $font-roboto;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+span.italic {
+	font-size: 20px;
+	margin: 0 0 20px;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.container-padding {
+	padding: 0 20px;
+	@include box-sizing(border-box);
+}
+
+.entry-content p {
+	margin: 0 0 20px;
+}
+
+/* Images */
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.aligncenter {
+	margin: 5px auto;
+}
+
+form {
+	input[type=text],
+	input[type=email],
+	input[type=tel],
+	textarea {
+		width: 100%;
+		padding: 10px;
+		@include box-sizing(border-box);
+		@include border-radius(4px);
+	}
+
+}
+
+/* Clearfix declarations */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* Start of body
+------------------------*/
+
+body {
+	font-size: 14px;
+	line-height: 24px;
+	color: $text-color;
+	background: $black;
+	font-family: $font-roboto;
+	background: url(../images/bg.png) repeat;
+}
+
+.site-container {
+	position: relative;
+	background: $white;
+	@include box-shadow(rgba(0, 0, 0, 1) 0 0 15px 1px);
+}
+
+#masthead {
+	top: 0;
+	position: absolute;
+	z-index: 10;
+
+	.logo {
+		float: left;
+		width: 138px;
+		height: 53px;
+		display: block;
+		margin: 16px 35px 0 25px;
+	}
+
+	.navbar {
+		width: 81%;
+		float: left;
+		background: rgba(29, 29, 29, .8);
+
+		.menu-main-menu-container {
+			float: left;
+		}
+
+		ul.nav-menu {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: $font-opensans;
+
+			li {
+				display: inline-block;
+
+				a {
+					float: left;
+					color: $white;
+					font-size: 14px;
+					padding: 14px 15px;
+
+					&:hover, &:active {
+						color: $red;
+					}
+				}
+
+				&.current-menu-item a {
+					color: $red;
+				}
+			}
+		}
+
+		@include breakpoint(max-width 1114px) {
+			width: 100%;
+			display: block;
+		}
+
+		@include breakpoint(max-width 1060px) {
+			display: none;
+		}
+	}
+
+	.esp-btns {
+		top: 0;
+		right: 0;
+		width: 184px;
+		height: 58px;
+		float: right;
+		position: absolute;
+
+		@include breakpoint(max-width 1060px) {
+			display: none;
+		}
+	}
+
+	.login {
+		float: left;
+		width: 120px;
+		color: $white;
+		padding: 17px 0;
+		font-size: 14px;
+		background: $red;
+		text-align: center;
+	}
+
+	.header-phone {
+		width: 64px;
+		height: 59px;
+		float: left;
+		display: block;
+		cursor: pointer;
+		text-indent: -9000px;
+		background: url(../images/header-phone.png) no-repeat;
+
+		&:hover, &:active {
+			background-position: 0 -59px;
+		}
+	}
+}
+
+.meteor-slides .meteor-buttons {
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 10px;
+	text-align: center;
+
+	 a {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+	 	float: none !important;
+		background: url(../images/slider-bullets.png) 0 -8px no-repeat;
+
+		&.activeSlide {
+			background-position: 0 0;
+		}
+	}
+}
+
+.main-slider {
+	position: relative;
+}
+
+.slider-info {
+	width: 40%;
+	top: 165px;
+	left: 44px;
+	z-index: 5;
+	position: absolute;
+
+	h3 {
+		color: $white;
+		margin: 0 0 20px;
+		font-weight: bold;
+	}
+
+	.slider-tagline {
+		color: $red;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	@include breakpoint(max-width 860px) {
+		top: 100px;
+	}
+
+	@include breakpoint($width1) {
+		display: none;
+	}
+}
+
+.content-area {
+	padding-top: 100px;
+	padding-bottom: 50px;
+
+	.site-content {
+		@include span(7 of 12);
+
+		@include breakpoint($width1) {
+			@include span(12 of 12);
+		}
+	}
+
+	.sidebar-container {
+		@include span(4 of 12 last);
+
+		aside {
+			float: left;
+			width: 100%;
+			padding: 20px;
+			display: block;
+			overflow: hidden;
+			margin: 0 0 30px;
+			border: 1px solid #fff;
+			@include box-shadow(rgba(0, 0, 0, 0.1) 0 0 15px 1px inset, 0 0 0 1px #ccc);
+			@include box-sizing(border-box);
+
+			h3 {
+				width: 140%;
+				margin: 0 0 20px -20px;
+				padding: 0 20px 20px;
+				border-bottom: 1px solid #ccc;
+				@include box-sizing(border-box);
+			}
+
+			a {
+				color: $red;
+
+				&:hover, &:active {
+					text-decoration: underline;
+				}
+			}
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		@include breakpoint($width1) {
+			@include span(12 of 12);
+		}
+	}
+}
+
+.top-content {
+	padding: 50px 0 80px;
+
+	@include breakpoint($width3) {
+		padding: 40px 0;
+	}
+}
+
+.top-homepage-icons {
+	@include span(4 of 12);
+
+	i.fa {
+		color: $black;
+		font-size: 120px;
+		margin: 0 0 20px;
+	}
+
+	&:last-child {
+		@include span(4 of 12 last);
+	}
+
+	@include breakpoint($width3) {
+		margin: 0 0 30px;
+		@include span(12 of 12);
+
+		&:last-child {
+			@include span(12 of 12);
+		}
+	}
+}
+
+.homepage-content {
+	padding: 0 5%;
+	@include box-sizing(border-box);
+
+	.home-page-heading h1 {
+		width: 70%;
+		margin: 0 auto 30px;
+
+		@include breakpoint($width2) {
+			width: 100%;
+		}
+	}
+
+	.btn-wrapper {
+		padding: 50px 0;
+		text-align: center;
+
+		a {
+			margin: 10px 5px;
+		}
+	}
+}
+
+.qoute-book {
+	padding: 50px 0;
+	background: $black;
+	text-align: center;
+}
+
+.fpage-cont {
+	width: 33.3%;
+	float: left;
+	position: relative;
+
+	img {
+		width: 100%;
+	}
+
+	.fpage-info {
+		top: 0;
+		width: 100%;
+		padding: 25px 20px;
+		position: absolute;
+		background: rgba(29, 29, 29, .8);
+		@include box-sizing(border-box);
+
+		h3 {
+			color: $white;
+			display: block;
+			margin: 0 0 10px;
+
+			a {
+				color: $white;
+				font-family: $font-roboto;
+			}
+		}
+
+		p {
+			color: #e1e1e1;
+			font-family: $font-opensans;
+		}
+
+		a {
+			color: $red;
+			font-family: $font-opensans;
+
+			&:hover, &:active {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.fpage-btn {
+		left: 0;
+		right: 0;
+		width: 230px;
+		bottom: 30px;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-left: auto;
+		margin-right: auto;
+		position: absolute;
+	}
+
+	&:last-child {
+		width: 33.4%;
+	}
+
+	@include breakpoint($width2) {
+		@include span(12 of 12);
+
+		&:last-child {
+			@include span(12 of 12);
+		}
+	}
+}
+
+.bot-cont {
+	padding: 40px 20px 30px;
+	@include span(3 of 12);
+	@include box-sizing(border-box);
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			font-size: 14px;
+			font-family: $font-opensans;
+
+			a {
+				color: $black;
+
+				&:hover, &:active {
+					color: $red;
+				}
+			}
+		}
+	}
+
+	h3 {
+		margin: 0 0 20px;
+	}
+
+	ul.social-icons {
+		float: left;
+		margin: 0 0 15px;
+
+		li {
+			float: left;
+			margin: 0 10px 0 0;
+
+			a {
+				width: 25px;
+				height: 25px;
+				display: block;
+				text-indent: -9000px;
+				background: url(../images/social-icons.png) no-repeat;
+			}
+
+			&.fb a {
+				background-position: 0 0;
+			}
+
+			&.tw a {
+				background-position: -25px 0;
+			}
+
+			&.gg a {
+				background-position: -50px 0;
+			}
+		}
+	}
+
+	&:last-child {
+		@include span(3 of 12 last);
+	}
+
+	@include breakpoint($width2) {
+		@include span(6 of 12);
+
+		&:nth-child(2n) {
+			@include span(6 of 12 last);
+		}
+	}
+
+	@include breakpoint($width4) {
+		@include span(12 of 12);
+
+		&:nth-child(2n) {
+			@include span(12 of 12);
+		}
+
+		&:last-child {
+			@include span(12 of 12);
+		}
+	}
+}
+
+/* Start of Footer
+------------------------*/
+
+footer {
+	color: #a2a2a2;
+	font-size: 12px;
+	padding: 30px 0;
+	text-align: center;
+	font-family: $font-opensans;
+
+	.footer-menu li {
+		margin: 0 10px;
+		display: inline-block;
+
+		a {
+			color: #a2a2a2;
+
+			&:hover, &:active {
+				color: $red;
+			}
+		}
+	}
+}
