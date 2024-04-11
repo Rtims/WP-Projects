@@ -1,0 +1,760 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ @import "compass/utilities/general/clearfix";
+@import "compass/reset";
+@import "compass/css3";
+@import "breakpoint";
+@import "susy";
+
+$susy: (
+  debug: (
+    image: show,
+    color: blue,
+    output: overlay,
+    toggle: top right,
+  ),
+);
+
+$width1: max-width 772px;
+$width2: max-width 645px;
+$width3: max-width 485px;
+$width4: max-width 325px;
+
+/* Variables Declared
+------------------------*/
+
+$black:		#000;
+$white:		#fff;
+$violet: 	#383c8e;
+$orange: 	#ff9900;
+$grey:   	#262525;
+$grey2:		#2f2f2f;
+$red:		#ea4b35;
+
+/* Font Use
+------------------------*/
+
+@font-face {
+    font-family: 'allerbold';
+    src: url('../fonts/aller-webfont.eot');
+    src: url('../fonts/aller-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller-webfont.woff2') format('woff2'),
+         url('../fonts/aller-webfont.woff') format('woff'),
+         url('../fonts/aller-webfont.ttf') format('truetype'),
+         url('../fonts/aller-webfont.svg#allerbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'allerregular';
+    src: url('../fonts/aller_rg-webfont.eot');
+    src: url('../fonts/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_rg-webfont.woff2') format('woff2'),
+         url('../fonts/aller_rg-webfont.woff') format('woff'),
+         url('../fonts/aller_rg-webfont.ttf') format('truetype'),
+         url('../fonts/aller_rg-webfont.svg#allerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldregular';
+    src: url('../fonts/oswald-regular-webfont.eot');
+    src: url('../fonts/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald-regular-webfont.woff2') format('woff2'),
+         url('../fonts/oswald-regular-webfont.woff') format('woff'),
+         url('../fonts/oswald-regular-webfont.ttf') format('truetype'),
+         url('../fonts/oswald-regular-webfont.svg#oswaldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-impact:		Impact, Charcoal, sans-serif;
+$font-opensans:		'Open Sans', sans-serif;
+$font-oswald:		'oswaldregular';
+$font-allerbold:	'allerbold';
+$font-allereg:		'allerregular';
+
+
+/* Global Buttons
+------------------------*/
+
+@mixin btn-violet {
+	width: 112px;
+	color: $white;
+	display: block;
+	font-size: 16px;
+	padding: 10px 0;
+	font-weight: bold;
+	text-align: center;
+	background: $violet;
+	border: 1px solid $violet;
+	text-transform: uppercase;
+	font-family: $font-opensans;
+	@include transition-duration(.5);
+	@include border-radius(4px);
+
+	&:hover, &:focus {
+		color: $white;
+		background: $red;
+		border: 1px solid $red;
+	}
+}
+
+.btn-violet {
+	@include btn-violet;
+}
+
+@mixin btn-orange {
+	width: 112px;
+	color: $white !important;
+	display: block;
+	font-size: 16px;
+	padding: 10px 0;
+	text-align: center;
+	background: $orange;
+	font-weight: lighter;
+	text-transform: none;
+	border: 1px solid $orange;
+	font-family: $font-opensans;
+	@include transition-duration(.5);
+	@include border-radius(4px);
+
+	&:hover, &:focus {
+		color: $white;
+		background: $red;
+		border: 1px solid $red;
+	}
+}
+
+.btn-orange {
+	@include btn-orange;
+}
+
+@mixin clearfix {
+  overflow: hidden;
+  @include has-layout;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.limit-width {
+	@include container(73.125em);
+
+	@include breakpoint(max-width 1400px) {
+		width: 95%;
+	}
+}
+
+head,
+head:hover {
+	display: none !important;
+}
+
+
+/* Layout Classes
+------------------------*/
+
+.span-12 {
+	@include span(12 of 12);
+}
+
+.span-11 {
+	@include span(11 of 12);
+}
+
+.span-11-last {
+	@include span(11 of 12 last);
+}
+
+.span-10 {
+	@include span(10 of 12);
+}
+
+.span-10-last {
+	@include span(10 of 12 last);
+}
+
+.span-9 {
+	@include span(9 of 12);
+}
+
+.span-9-last {
+	@include span(9 of 12 last);
+}
+
+.span-8 {
+	@include span(8 of 12);
+}
+
+.span-8-last {
+	@include span(8 of 12 last);
+}
+
+.span-7 {
+	@include span(7 of 12);
+}
+
+.span-7-last {
+	@include span(7 of 12 last);
+}
+
+.span-6 {
+	@include span(6 of 12);
+}
+
+.span-6-last {
+	@include span(6 of 12 last);
+}
+
+.span-5 {
+	@include span(5 of 12);
+}
+
+.span-5-last {
+	@include span(5 of 12 last);
+}
+
+.span-4 {
+	@include span(4 of 12);
+}
+
+.span-4-last {
+	@include span(4 of 12 last);
+}
+
+.span-3 {
+	@include span(3 of 12);
+}
+
+.span-3-last {
+	@include span(3 of 12 last);
+}
+
+.span-2 {
+	@include span(2 of 12);
+}
+
+.span-2-last {
+	@include span(2 of 12 last);
+}
+
+.span-1 {
+	@include span(1 of 12);
+}
+
+.span-1-last {
+	@include span(1 of 12 last);
+}
+
+/* Global Settings
+------------------------*/
+
+a {
+	color: $red;
+	text-decoration: none;
+}
+
+a:visited {
+	color: $red;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:active,
+a:hover {
+	color: $violet;
+	outline: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.3;
+	font-family: $font-allereg;
+}
+
+h1 {
+	font-size: 40px;
+	margin: 0 0 40px;
+}
+
+h2 {
+	font-size: 30px;
+	margin: 0 0 25px;
+}
+
+h3 {
+	font-size: 25px;
+	margin: 0 0 16px;
+}
+
+h4 {
+	font-size: 20px;
+	margin: 0 0 25px;
+}
+
+h5 {
+	font-size: 18px;
+	margin: 0 0 30px;
+}
+
+h6 {
+	font-size: 16px;
+	margin: 0 0 36px;
+}
+
+/* Start of body
+------------------------*/
+
+body {
+	color: $black;
+	font-size: 16px;
+	line-height: 24px;
+	font-family: $font-opensans;
+}
+
+#masthead {
+	background: $white;
+
+	.top-header {
+		padding: 8px 0;
+	}
+
+	.logo {
+		@include span(2 of 12);
+	}
+
+	.site-description {
+		color: $violet;
+		padding: 30px 0 0;
+		text-align: right;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-family: $font-oswald;
+		@include span(7 of 12 last);
+
+		@include breakpoint(max-width 1020px) {
+			display: none;
+		}
+	}
+
+	.navbar {
+		background: #1a1c45;
+		border-bottom: 5px solid $orange;
+
+		.menu-main-menu-container {
+			font-size: 18px;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-family: $font-oswald;
+			@include span(9 of 12);
+
+			ul {
+				margin: 0;
+				padding: 0;
+
+				li {
+
+					a {
+						float: left;
+						color: $white;
+						display: block;
+						padding: 18px 20px;
+						font-family: $font-oswald;
+
+						&:hover, &:focus {
+							background: $orange;
+						}
+						
+						@include breakpoint($width1) {
+							width: 100%;
+							display: block;
+							border-top: 1px solid #101128;
+						}
+					}
+
+					@include breakpoint($width1) {
+
+						&:first-child a {
+							border-top: 0;
+						}
+					}
+				}
+
+				li.current_page_item a {
+					background: $orange;
+				}
+			}
+
+			@include breakpoint($width1) {
+				margin: 0;
+				width: 100%;
+			}
+		}
+
+		@include breakpoint($width1) {
+			border: 0;	
+
+			.navigation {
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	#searchform {
+		width: 225px;
+		height: 40px;
+		margin: 10px 0 0;
+		background: $white;
+		@include span(3 of 12 last);
+		@include box-shadow(rgba(0, 0, 0, .2) 0 0 5px 3px inset);
+
+		input[type=text] {
+			border: 0;
+			float: left;
+			width: 85%;
+			height: 40px;
+			background: none;
+		}
+
+		input[type=submit] {
+			float: right;
+			border: 0;
+			width: 22px;
+			height: 20px;
+			display: block;
+			text-indent: -9999px;
+			margin: 10px 13px 0 0;
+			background: url(../images/search-icon.png) no-repeat;
+
+			&:hover, &:focus {
+				background-position: 0 -20px;
+			}
+		}
+
+		@include breakpoint($width1) {
+			width: 98%;
+			float: none;
+			margin: 10px auto;
+		}
+	}
+}
+
+.main-slider {
+	padding: 50px 0 80px;
+	text-align: center;
+	background: $violet url(../images/slider-bg.png) center top no-repeat;
+
+	h1 {
+		color: $white;
+		font-size: 40px;
+		margin: 0 0 20px;
+		text-transform: uppercase;
+		font-family: $font-impact;
+	}
+
+	.slider-thumb {
+		margin: -20px 0 0;
+		@include span(6 of 12);
+
+		img {
+			max-width: 100%;
+		}
+
+		@include breakpoint($width2) {
+			margin: 0 auto 20px;
+			float: none !important; 
+		}
+	}
+
+	.slider-discription {
+		@include span(6 of 12);
+
+		h1 {
+			color: $white;
+			font-size: 45px;
+			margin: 0 0 20px;
+			text-transform: uppercase;
+			text-shadow: 0 5px 3px rgba(0, 0, 0, .1);
+		}
+
+		span {
+			color: #d6d6d6;
+			font-size: 25px;
+			font-family: $font-opensans;
+		}
+
+		.slider-btn {
+			width: 270px;
+			height: 61px;
+			display: block;
+			text-indent: -9000px;
+			background: url(../images/slider-btn.png) no-repeat;
+
+			&:hover, &:focus {
+				background-position: 0 -61px;
+			}
+
+			@include breakpoint($width2) {
+				margin: 0 auto;
+			}
+		}
+
+		@include breakpoint($width2) {
+			text-align: center;
+			@include span(12 of 12);
+
+			h1 {
+				font-size: 30px;
+			}
+
+			span {
+				font-size: 20px;
+			}
+		}
+	}
+
+	li div {
+		&:last-child {
+			margin: 0 !important;
+		}
+	}
+
+	.bx-controls {
+		display: none;
+	}
+
+	@include breakpoint($width1) {
+		height:	auto;
+	}
+}
+
+
+.top5-ecigs {
+	
+	.limit-width {
+		padding: 75px 0 0;
+	}
+
+	.top5-container {
+		float: left;
+		width: 100%;
+		padding: 0 15px;
+		max-width: 217px;
+		margin-left: 19px;
+		text-align: center;
+		border: 1px solid #e7e7e7;
+		@include box-shadow(0 1px 3px rgba(0, 0, 0, .1));
+		@include box-sizing(border-box);
+		background-color: #ffffff; // Old browsers
+		@include filter-gradient(#ffffff, #f2f2f2, vertical); // IE6-9
+		@include background-image(linear-gradient(top,  #ffffff 0%,#f2f2f2 100%));
+
+		&:first-child {
+			margin: 0;
+		}
+
+		h4 {
+			margin: 0 0 20px;
+
+			a {
+				color: $grey;
+			}
+		}
+
+		.top5-thumb {
+			width: 153px;
+			height: 153px;
+			overflow: hidden;
+			background: $white;
+			margin: -75px auto 20px;
+			@include border-radius(50%);
+			border: 8px solid #ccc;
+		}
+
+		.top5-content {
+			margin: 0 0 20px;
+		}
+
+		.read-more {
+			margin: 0 auto 20px;
+			font-weight: normal !important;
+			@include btn-orange;
+		}
+
+		@include breakpoint($width1) {
+			max-width: 100%;
+			display: block;
+			margin: 0 0 90px;
+
+			&:first-child {
+				margin: 0 0 90px;
+			}
+		}
+	}
+}
+
+#content {
+	padding: 80px 0;
+
+	.content {
+		@include span(8 of 12);
+	}
+
+	.sidebar {
+		@include span(4 of 12);
+		float: right !important;
+		margin-right: 0 !important;
+
+		ul {
+			margin: 0;
+			padding: 0 20px;
+			list-style: none;
+
+			li {
+				margin: 10px 0;
+			}
+		}
+	}
+
+	@include breakpoint($width2) {
+		.content {
+			margin: 0 0 40px;
+			@include span(12 of 12);
+		}
+
+		.sidebar {
+			@include span(12 of 12);
+			float: none !important;
+			margin: 0 !important;
+		}
+	}
+}
+
+.latest-news {
+	text-align: center;
+	padding: 45px 0 80px;
+	background: #1a1c45 url(../images/latest-new-stripe-bg.jpg) top repeat-x;
+
+	h1 {
+		color: $white;
+		font-family: $font-impact;
+		text-transform: uppercase;
+	}
+
+	.latest-news-thumb {
+		float: left;
+		width: 100%;
+		display: block;
+		margin: 0 0 20px;
+	}
+
+	.latest-news-container {
+		background: $white;
+		border-top: 4px solid $orange;
+		@include span(3 of 12);
+
+		h5 {
+			color: $black;
+			margin: 0 0 10px;
+			font-family: $font-allereg;
+		}
+
+		.latest-news-content {
+			padding: 0 15px;
+			@include box-sizing(border-box);
+		}
+
+		.btn-orange {
+			margin: 20px auto;
+		}
+
+		&:last-child {
+			margin: 0 !important;
+		}
+
+		@include breakpoint($width1) {
+			margin: 0 0 20px;
+			@include span(6 of 12);
+
+			&:nth-child(3) {
+				margin: 0 0 20px!important;
+			}
+		}
+
+		@include breakpoint($width3) {
+			@include span(12 of 12);
+
+			&:nth-child(2), &:last-child {
+				margin: 0 0 20px!important;
+			}
+
+		}
+	}
+}
+
+#sidebar {
+	
+	aside {
+		padding: 2%;
+		overflow: hidden;
+		margin: 0 0 20px;
+		position: relative;
+		border: 1px solid #c5c5c5;
+		@include border-radius(4px);
+		@include box-sizing(border-box);
+		@include box-shadow(rgba(0, 0, 0, .1) 0 1px 3px);
+
+		h3 {
+			padding: 3%;
+			width: 110%;
+			color: $white;
+			background: $violet;
+			margin: -3% 0 0 -3%;
+			@include box-sizing(border-box);
+			@include border-radius(4px 4px 0 0);
+
+			@include breakpoint($width1) {
+				padding: 5%;
+			}
+		}
+	}
+}
+
+footer .site-info {
+	color: #c8c8c8;
+	text-align: center;
+	padding: 40px 0;
+	background: 
+		url(../images/ftr-bg-stripe.png) top repeat-x,
+		url(../images/ftr-bg.png) repeat;
+
+	a {
+		color: #c8c8c8;
+
+		&:hover, &:focus {
+			color: $orange;
+		}
+	}
+}
+
+.site-main article .entry-meta span {
+	margin: 0 10px 0 0;
+}
